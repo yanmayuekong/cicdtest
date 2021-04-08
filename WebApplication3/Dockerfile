@@ -4,7 +4,7 @@ FROM my.hub.com/dotnetcore/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM push my.hub.com/dotnetcore/sdk:5.0-buster-slim AS build
+FROM my.hub.com/dotnetcore/sdk:5.0-buster-slim AS build
 WORKDIR /src
 COPY ["WebApplication3/WebApplication3.csproj", "WebApplication3/"]
 RUN dotnet restore "WebApplication3/WebApplication3.csproj"
